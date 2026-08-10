@@ -3,7 +3,7 @@ import { DynamicHead } from "./components/DynamicHead";
 import { Layout } from "./components/Layout";
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
-import { HomePage } from "./pages/HomePage";
+import { HomePage } from "./pages/Home";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { ServiceDetailPage } from "./pages/ServiceDetailPage";
 import { ServicesPage } from "./pages/ServicesPage";
