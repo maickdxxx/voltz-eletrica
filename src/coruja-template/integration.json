@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 2,
+  "brand": {
+    "namePath": "global.brand.name",
+    "taglinePath": "global.brand.slogan",
+    "logoPath": "global.brand.logoUrl",
+    "faviconPath": "global.brand.faviconUrl"
+  },
+  "contact": {
+    "phonePath": "global.brand.phone",
+    "whatsappRawPath": "global.brand.whatsapp",
+    "whatsappDisplayPath": "global.brand.whatsapp",
+    "whatsappMessagePath": "global.contact.whatsappMessage",
+    "emailPath": "global.brand.email",
+    "hoursPath": "global.contact.hours"
+  },
+  "seo": {
+    "global": {
+      "titlePath": "global.seo.defaultTitle",
+      "descriptionPath": "global.seo.defaultDescription",
+      "ogImagePath": "global.seo.ogImageUrl"
+    },
+    "pages": [
+      {"pageId":"home","titlePath":"pages.home.seo.title","descriptionPath":"pages.home.seo.description","ogImagePath":"pages.home.seo.ogImageUrl"},
+      {"pageId":"about","titlePath":"pages.about.seo.title","descriptionPath":"pages.about.seo.description"},
+      {"pageId":"services","titlePath":"pages.services.seo.title","descriptionPath":"pages.services.seo.description"},
+      {"pageId":"contact","titlePath":"pages.contact.seo.title","descriptionPath":"pages.contact.seo.description"}
+    ]
+  },
+  "pages": [
+    {"pageId":"home","label":"Início","path":"/","schemaPath":"pages.home","seoPath":"pages.home.seo","showInNav":true},
+    {"pageId":"about","label":"Sobre","path":"/sobre","schemaPath":"pages.about","seoPath":"pages.about.seo","showInNav":true},
+    {"pageId":"services","label":"Serviços","path":"/servicos","schemaPath":"pages.services","seoPath":"pages.services.seo","showInNav":true},
+    {"pageId":"contact","label":"Contato","path":"/contato","schemaPath":"pages.contact","seoPath":"pages.contact.seo","showInNav":true}
+  ],
+  "events": [
+    {"id":"header-whatsapp","type":"whatsapp_click","label":"WhatsApp do cabeçalho","targetPath":"global.brand.whatsapp","messagePath":"global.contact.whatsappMessage","required":true},
+    {"id":"hero-whatsapp","type":"whatsapp_click","label":"WhatsApp do hero","targetPath":"global.brand.whatsapp","messagePath":"global.contact.whatsappMessage","required":true},
+    {"id":"phone-click","type":"tel_click","label":"Clique no telefone","targetPath":"global.brand.phone"},
+    {"id":"contact-form","type":"form_submit","label":"Formulário de orçamento","required":true},
+    {"id":"hero-services","type":"cta_click","label":"Botão de serviços do hero","targetPath":"pages.home.hero.secondaryCta.href"}
+  ],
+  "images": [
+    {"id":"brand-logo","label":"Logo","srcPath":"global.brand.logoUrl","altPath":"global.brand.logoAlt","required":true},
+    {"id":"hero-home","label":"Imagem principal","srcPath":"pages.home.hero.imageUrl","altPath":"pages.home.hero.imageAlt","required":true},
+    {"id":"home-about","label":"Imagem da seção sobre","srcPath":"pages.home.about.imageUrl","altPath":"pages.home.about.imageAlt"},
+    {"id":"about-hero","label":"Imagem da página sobre","srcPath":"pages.about.hero.imageUrl","altPath":"pages.about.hero.imageAlt"}
+  ],
+  "forms": [{"id":"contact","label":"Formulário de orçamento","schemaPath":"pages.contact.form","eventLabel":"Orçamento via WhatsApp"}],
+  "theme": {"colors":{"primary":"global.theme.colors.primary","secondary":"global.theme.colors.secondary","accent":"global.theme.colors.accent","background":"global.theme.colors.background","surface":"global.theme.colors.surface","text":"global.theme.colors.text","muted":"global.theme.colors.muted","dark":"global.theme.colors.dark","whatsapp":"global.theme.colors.whatsapp"}},
+  "collections": {
+    "services": {"enabled":true,"path":"collections.services","requiredFields":["id","slug","title","description","active"]},
+    "testimonials": {"enabled":true,"path":"collections.testimonials","requiredFields":["id","name","quote","active"]},
+    "faq": {"enabled":true,"path":"collections.faq","requiredFields":["id","question","answer","active"]},
+    "serviceAreas": {"enabled":true,"path":"collections.serviceAreas","requiredFields":["id","name","active"]}
+  }
+}

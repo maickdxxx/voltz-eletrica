@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "routes": [
+    {
+      "type": "page",
+      "path": "/",
+      "pageId": "home",
+      "label": "Início",
+      "showInNav": true
+    },
+    {
+      "type": "page",
+      "path": "/sobre",
+      "pageId": "about",
+      "label": "Sobre",
+      "showInNav": true
+    },
+    {
+      "type": "collectionList",
+      "path": "/servicos",
+      "collectionId": "services",
+      "pageId": "services",
+      "label": "Serviços",
+      "showInNav": true
+    },
+    {
+      "type": "collectionItem",
+      "path": "/servicos/:slug",
+      "collectionId": "services",
+      "label": "Detalhe do serviço",
+      "showInNav": false,
+      "collectionPath": "collections.services",
+      "slugField": "slug"
+    },
+    {
+      "type": "page",
+      "path": "/contato",
+      "pageId": "contact",
+      "label": "Contato",
+      "showInNav": true
+    }
+  ],
+  "spaFallback": "/index.html"
+}

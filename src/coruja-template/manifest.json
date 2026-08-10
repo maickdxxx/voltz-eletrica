@@ -1,0 +1,13 @@
+{
+  "id": "voltz-eletrica",
+  "name": "Voltz Elétrica",
+  "description": "Template completo para eletricistas, instaladores e empresas de serviços elétricos residenciais e comerciais.",
+  "version": "1.0.0",
+  "schemaVersion": 2,
+  "niche": "Eletricista",
+  "previewImage": "/coruja-template-cover.svg",
+  "tags": ["eletricista", "elétrica", "serviços", "residencial", "comercial", "whatsapp"],
+  "visibility": "public_catalog",
+  "source": "github",
+  "githubRepo": "maickdxxx/voltz-eletrica"
+}

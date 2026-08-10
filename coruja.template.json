@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 2,
+  "contractVersion": 2,
+  "templateId": "voltz-eletrica",
+  "name": "Voltz Elétrica",
+  "version": "1.0.0",
+  "visibility": "public_catalog",
+  "description": "Template profissional e responsivo para eletricistas e empresas de serviços elétricos, com páginas de serviços, WhatsApp, formulário, SEO, schema, mapa, analytics e editor visual.",
+  "thumbnailUrl": "/coruja-template-cover.svg",
+  "coverUrl": "/coruja-template-cover.svg",
+  "renderer": {
+    "entry": "src/coruja-template/index.ts",
+    "mode": "compiled_required",
+    "framework": "vite-react-spa",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist"
+  },
+  "deploy": {
+    "mode": "static",
+    "buildCommand": "npm run build",
+    "outputDir": "dist",
+    "rootDir": ""
+  },
+  "paths": {
+    "manifest": "src/coruja-template/manifest.json",
+    "integration": "src/coruja-template/integration.json",
+    "editableSchema": "src/coruja-template/editable-schema.json",
+    "defaults": "src/coruja-template/defaults.json",
+    "routes": "src/coruja-template/routes.json",
+    "theme": "src/coruja-template/theme.json"
+  },
+  "features": {
+    "blog": false,
+    "services": true,
+    "contactForm": true,
+    "whatsapp": true,
+    "serviceAreas": true,
+    "cityPages": false
+  },
+  "capabilities": {
+    "blog": false,
+    "collections": ["services", "testimonials", "faq", "serviceAreas"]
+  },
+  "supports": {
+    "blog": false,
+    "services": true,
+    "seoPerPage": true,
+    "whatsapp": true,
+    "contactForm": true,
+    "editableImages": true,
+    "previewBySlug": true,
+    "visualEditor": true,
+    "themeColors": true,
+    "collections": true,
+    "analytics": true,
+    "favicon": true,
+    "optionalPages": false
+  },
+  "routes": [
+    { "type": "page", "path": "/", "pageId": "home" },
+    { "type": "page", "path": "/sobre", "pageId": "about" },
+    { "type": "collectionList", "path": "/servicos", "collectionId": "services" },
+    { "type": "collectionItem", "path": "/servicos/:slug", "collectionId": "services" },
+    { "type": "page", "path": "/contato", "pageId": "contact" }
+  ],
+  "theme": {
+    "tokens": {
+      "color": {
+        "primary": "#F5C542",
+        "secondary": "#10182A",
+        "accent": "#2F80ED",
+        "bg": "#F5F7FA",
+        "surface": "#FFFFFF",
+        "fg": "#111827",
+        "muted": "#60697A",
+        "dark": "#0B1020",
+        "whatsapp": "#22C55E"
+      },
+      "radius": { "base": "20px" },
+      "container": { "maxWidth": "1180px" },
+      "font": { "family": "Inter, Segoe UI, system-ui, sans-serif" }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "colors": {
+    "primary": "#F5C542",
+    "secondary": "#10182A",
+    "accent": "#2F80ED",
+    "background": "#F5F7FA",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "muted": "#60697A",
+    "dark": "#0B1020",
+    "whatsapp": "#22C55E"
+  },
+  "fonts": {
+    "body": "Inter, Segoe UI, system-ui, sans-serif",
+    "heading": "Inter, Segoe UI, system-ui, sans-serif"
+  },
+  "radius": {
+    "card": "24px",
+    "button": "14px"
+  }
+}
