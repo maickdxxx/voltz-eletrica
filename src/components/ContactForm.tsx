@@ -30,11 +30,24 @@ export function ContactForm() {
       service ? `Serviço: ${service}` : "",
       message ? `Detalhes: ${message}` : "",
     ].filter(Boolean).join("\n");
-    if (whatsapp) window.open(`https://wa.me/${whatsapp}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+
+    if (!whatsapp) return;
+
+    const link = document.createElement("a");
+    link.href = `https://wa.me/${whatsapp}?text=${encodeURIComponent(text)}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.click();
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} data-coruja-form="contact" data-coruja-event="form_submit" data-coruja-event-label="contact-form">
+    <form
+      className="contact-form"
+      onSubmit={handleSubmit}
+      data-coruja-form="contact"
+      data-coruja-event="form_submit"
+      data-coruja-event-label="contact-form"
+    >
       <div className="field-grid">
         <label>
           <span data-coruja-path="pages.contact.form.nameLabel">{nameLabel}</span>
