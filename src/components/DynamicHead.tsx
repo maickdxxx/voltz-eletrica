@@ -26,8 +26,10 @@ function setMeta(name: string, content: string, property = false) {
 export function DynamicHead() {
   const location = useLocation();
   const services = useCollection<Service>("collections.services");
-  const defaultTitle = useContent<string>("global.seo.defaultTitle", "");
-  const defaultDescription = useContent<string>("global.seo.defaultDescription", "");
+  const legacyDefaultTitle = useContent<string>("global.seo.defaultTitle", "");
+  const legacyDefaultDescription = useContent<string>("global.seo.defaultDescription", "");
+  const defaultTitle = useContent<string>("global.seo.title", legacyDefaultTitle);
+  const defaultDescription = useContent<string>("global.seo.description", legacyDefaultDescription);
   const defaultOg = useContent<string>("global.seo.ogImageUrl", "");
   const favicon = useContent<string>("global.brand.faviconUrl", "");
   const indexingEnabled = useContent<boolean>("global.seo.indexingEnabled", true);
