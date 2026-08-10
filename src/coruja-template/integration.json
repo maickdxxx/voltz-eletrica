@@ -16,8 +16,8 @@
   },
   "seo": {
     "global": {
-      "titlePath": "global.seo.title",
-      "descriptionPath": "global.seo.description",
+      "titlePath": "global.seo.defaultTitle",
+      "descriptionPath": "global.seo.defaultDescription",
       "ogImagePath": "global.seo.ogImageUrl"
     },
     "pages": [
