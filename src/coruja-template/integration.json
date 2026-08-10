@@ -16,15 +16,15 @@
   },
   "seo": {
     "global": {
-      "titlePath": "global.seo.defaultTitle",
-      "descriptionPath": "global.seo.defaultDescription",
+      "titlePath": "global.seo.title",
+      "descriptionPath": "global.seo.description",
       "ogImagePath": "global.seo.ogImageUrl"
     },
     "pages": [
       {"pageId":"home","titlePath":"pages.home.seo.title","descriptionPath":"pages.home.seo.description","ogImagePath":"pages.home.seo.ogImageUrl"},
-      {"pageId":"about","titlePath":"pages.about.seo.title","descriptionPath":"pages.about.seo.description"},
-      {"pageId":"services","titlePath":"pages.services.seo.title","descriptionPath":"pages.services.seo.description"},
-      {"pageId":"contact","titlePath":"pages.contact.seo.title","descriptionPath":"pages.contact.seo.description"}
+      {"pageId":"about","titlePath":"pages.about.seo.title","descriptionPath":"pages.about.seo.description","ogImagePath":"pages.about.seo.ogImageUrl"},
+      {"pageId":"services","titlePath":"pages.services.seo.title","descriptionPath":"pages.services.seo.description","ogImagePath":"pages.services.seo.ogImageUrl"},
+      {"pageId":"contact","titlePath":"pages.contact.seo.title","descriptionPath":"pages.contact.seo.description","ogImagePath":"pages.contact.seo.ogImageUrl"}
     ]
   },
   "pages": [
