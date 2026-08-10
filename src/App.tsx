@@ -5,7 +5,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/Home";
 import { NotFoundPage } from "./pages/NotFoundPage";
-import { ServiceDetailPage } from "./pages/ServiceDetailPage";
+import { ServiceDetailPage } from "./pages/ServicePage";
 import { ServicesPage } from "./pages/ServicesPage";
 
 export default function App() {
