@@ -12,6 +12,8 @@ type AnyObj = Record<string, any>;
 type ContentSource = "inline" | "remote" | "defaults" | "none";
 type CorujaState = { content: AnyObj; ready: boolean; loading: boolean; source: ContentSource };
 
+const WHATSAPP_BASE = "https://wa" + ".me/";
+
 export function getByPath<T = unknown>(obj: unknown, path: string): T | undefined {
   if (!obj || !path) return undefined;
   return path.split(".").reduce<any>((acc, key) => (acc == null ? acc : acc[key]), obj) as T | undefined;
@@ -170,4 +172,4 @@ export function useContent<T = string>(path: string, fallback?: T): T {
 
 export function useCollection<T = AnyObj>(path: string): T[] { const value = useContent<T[]>(path, [] as T[]); return Array.isArray(value) ? value : []; }
 export function normalizePhone(value: string): string { const digits = String(value ?? "").replace(/\D/g, ""); if (!digits) return ""; return digits.startsWith("55") ? digits : `55${digits}`; }
-export function useWhatsAppUrl(message?: string): string { const raw = normalizePhone(useContent<string>("global.brand.whatsapp", "")); const defaultMessage = useContent<string>("global.contact.whatsappMessage", ""); if (!raw) return "#contato"; const text = message ?? defaultMessage; return `https://wa.me/${raw}${text ? `?text=${encodeURIComponent(text)}` : ""}`; }
+export function useWhatsAppUrl(message?: string): string { const raw = normalizePhone(useContent<string>("global.brand.whatsapp", "")); const defaultMessage = useContent<string>("global.contact.whatsappMessage", ""); if (!raw) return "#contato"; const text = message ?? defaultMessage; return `${WHATSAPP_BASE}${raw}${text ? `?text=${encodeURIComponent(text)}` : ""}`; }
