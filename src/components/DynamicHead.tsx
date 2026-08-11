@@ -23,6 +23,25 @@ function setMeta(name: string, content: string, property = false) {
   node.content = content;
 }
 
+function setCanonical(href: string) {
+  let node = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!node) {
+    node = document.createElement("link");
+    node.rel = "canonical";
+    document.head.appendChild(node);
+  }
+  node.href = href;
+}
+
+function absoluteUrl(path: string): string {
+  if (!path) return "";
+  try {
+    return new URL(path, window.location.origin).href;
+  } catch {
+    return path;
+  }
+}
+
 export function DynamicHead() {
   const location = useLocation();
   const services = useCollection<Service>("collections.services");
@@ -57,7 +76,9 @@ export function DynamicHead() {
   useEffect(() => {
     const title = service?.seo?.title || (service?.title ? `${service.title} | ${brandName}` : pageTitle || defaultTitle);
     const description = service?.seo?.description || pageDescription || defaultDescription;
-    const og = withCorujaBasePath(service?.seo?.ogImageUrl || service?.imageUrl || pageOg || defaultOg);
+    const og = absoluteUrl(
+      withCorujaBasePath(service?.seo?.ogImageUrl || service?.imageUrl || pageOg || defaultOg),
+    );
     const ogAlt = service?.seo?.ogImageAlt || service?.imageAlt || pageOgAlt || brandName;
     const knownStaticPath = ["/", "/sobre", "/servicos", "/contato"].includes(location.pathname);
     const knownPage = knownStaticPath || Boolean(service);
@@ -71,7 +92,9 @@ export function DynamicHead() {
     setMeta("og:type", "website", true);
     setMeta("og:image", og, true);
     setMeta("og:image:alt", ogAlt, true);
-    setMeta("og:url", window.location.href.split("#")[0], true);
+    const canonicalUrl = window.location.href.split(/[?#]/)[0];
+    setMeta("og:url", canonicalUrl, true);
+    setCanonical(canonicalUrl);
     setMeta("twitter:card", "summary_large_image");
     setMeta("robots", noindex ? "noindex,nofollow" : "index,follow");
 
